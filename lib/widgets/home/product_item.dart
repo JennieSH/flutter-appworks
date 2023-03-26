@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_appworks/data/product.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+  const ProductItem({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class ProductItem extends StatelessWidget {
               left: Radius.circular(8),
             ),
             child: Image.network(
-              'https://images.unsplash.com/photo-1543872084-c7bd3822856f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+              product.url,
               width: 60,
             ),
           ),
@@ -31,18 +34,12 @@ class ProductItem extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                'UNIQLO 特級極輕羽絨外套',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
+            children: [
+              Text(product.name),
+              const SizedBox(
                 height: 8,
               ),
-              Text(
-                'NT\$ 323',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
+              Text('NT\$ ${product.price}'),
             ],
           )
         ],
