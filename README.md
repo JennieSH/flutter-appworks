@@ -1,16 +1,33 @@
-# flutter_appworks
+# Flutter Basic I - Layouts
 
-A new Flutter project.
+## 本週學習目標
 
-## Getting Started
+[Introduction to widgets](https://docs.flutter.dev/development/ui/widgets-intro)  
+[Layouts in Flutter](https://docs.flutter.dev/development/ui/layout)  
+[Building layouts](https://docs.flutter.dev/development/ui/layout/tutorial)  
+[Adding interactivity](https://docs.flutter.dev/development/ui/interactive)  
+[Assets and images](https://docs.flutter.dev/development/ui/assets-and-images)  
+[Material Design](https://docs.flutter.dev/development/ui/material)
 
-This project is a starting point for a Flutter application.
+<br>
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 本週實作目標
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Web**
+  ![Web](https://i.imgur.com/RfAwwMb.jpg)
+
+<br>
+
+- **iOS**
+  ![iOS](https://i.imgur.com/k0SYlCq.jpg)
+
+<br>
+
+- **Android**
+  ![Android](https://i.imgur.com/jY22lmt.jpg)
+
+<br>
+
+Design 概念來自 [Flutter Gallery](https://gallery.flutter.dev/)
