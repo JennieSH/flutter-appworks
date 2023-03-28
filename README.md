@@ -21,8 +21,7 @@
 <br>
 
 - **Mobile** (iOS/Android)
-  ![Mobile](https://i.imgur.com/nwBuuFb.png)
-
-<br>
+  ![Mobile](https://i.imgur.com/HpUZogx.png)
+  <br>
 
 Design 概念來自 [Flutter Gallery](https://gallery.flutter.dev/)
