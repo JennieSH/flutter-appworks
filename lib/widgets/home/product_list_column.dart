@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_appworks/data/product.dart';
 import 'package:flutter_appworks/widgets/home/product_item.dart';
 
-class ProductListMobileLayout extends StatelessWidget {
-  const ProductListMobileLayout({
+class ProductListColumn extends StatelessWidget {
+  const ProductListColumn({
     super.key,
     required this.categories,
   });

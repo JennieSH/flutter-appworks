@@ -1,9 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/data/product.dart';
 import 'package:flutter_appworks/widgets/home/product_item.dart';
 
-class ProductListDesktopLayout extends StatelessWidget {
-  const ProductListDesktopLayout({
+class ProductListRow extends StatelessWidget {
+  const ProductListRow({
     super.key,
     required this.categories,
   });
