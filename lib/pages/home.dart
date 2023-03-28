@@ -14,9 +14,11 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: SizedBox(
-          width: 120.0,
-          child: Image.asset('assets/logo.png'),
+        title: Center(
+          child: SizedBox(
+            width: 120.0,
+            child: Image.asset('assets/logo.png'),
+          ),
         ),
       ),
       body: Column(children: [
