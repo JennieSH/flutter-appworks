@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.grey,
+        dividerColor: Colors.transparent,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.grey[200],
         ),
