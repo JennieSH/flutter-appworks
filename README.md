@@ -20,13 +20,8 @@
 
 <br>
 
-- **iOS**
-  ![iOS](https://i.imgur.com/k0SYlCq.jpg)
-
-<br>
-
-- **Android**
-  ![Android](https://i.imgur.com/jY22lmt.jpg)
+- **Mobile** (iOS/Android)
+  ![Mobile](https://i.imgur.com/nwBuuFb.png)
 
 <br>
 
