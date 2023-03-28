@@ -27,7 +27,7 @@ class ProductItem extends StatelessWidget {
                 left: Radius.circular(8),
               ),
               child: Image.network(
-                product.url,
+                product.mainImage,
                 width: 60,
               ),
             ),
@@ -37,7 +37,7 @@ class ProductItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(product.name),
+                Text(product.title),
                 const SizedBox(
                   height: 8,
                 ),

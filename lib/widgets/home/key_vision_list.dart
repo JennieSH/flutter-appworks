@@ -24,7 +24,7 @@ class KeyVisionList extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
-              kvList[index].url,
+              kvList[index].picture,
             ),
           ),
         ),

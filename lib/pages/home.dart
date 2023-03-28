@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/models/key_vision.dart';
-import 'package:flutter_appworks/models/product.dart';
+import 'package:flutter_appworks/services/key_vision.dart';
+import 'package:flutter_appworks/services/product.dart';
 import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
 import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
-import 'package:flutter_appworks/widgets/home/product_list_column.dart';
-import 'package:flutter_appworks/widgets/home/product_list_row.dart';
 import 'package:flutter_appworks/widgets/responsive_layout.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categories = [women, men, accessories];
-    final kvList = kvListData;
+    final kvList = getKeyVisionList();
 
     return Scaffold(
       appBar: AppBar(

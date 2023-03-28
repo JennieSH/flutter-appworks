@@ -1,28 +1,64 @@
-class Product {
-  late String name;
-  late String url;
-  late int price;
+class Color {
+  Color({
+    required this.code,
+    required this.name,
+  });
 
-  Product({required this.name, required this.url, required this.price});
+  String code;
+  String name;
+}
+
+class Variant {
+  Variant({
+    required this.colorCode,
+    required this.size,
+    required this.stock,
+  });
+
+  String colorCode;
+  String size;
+  int stock;
+}
+
+class Product {
+  Product({
+    required this.id,
+    required this.category,
+    required this.title,
+    required this.description,
+    required this.price,
+    required this.texture,
+    required this.wash,
+    required this.place,
+    required this.note,
+    required this.story,
+    required this.mainImage,
+    required this.images,
+    required this.variants,
+    required this.colors,
+    required this.sizes,
+  });
+
+  int id;
+  String category;
+  String title;
+  String description;
+  int price;
+  String texture;
+  String wash;
+  String place;
+  String note;
+  String story;
+  String mainImage;
+  List<String> images;
+  List<Variant> variants;
+  List<Color> colors;
+  List<String> sizes;
 }
 
 class Category {
-  late String name;
-  List<Product> products;
-
   Category({required this.name, required this.products});
+
+  String name;
+  List<Product> products;
 }
-
-List<Product> _mockProducts = List.filled(
-  5,
-  Product(
-    name: 'UNIQLO 特級極輕羽絨外套',
-    url:
-        'https://images.unsplash.com/photo-1543872084-c7bd3822856f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
-    price: 323,
-  ),
-);
-
-Category women = Category(name: '女裝', products: _mockProducts);
-Category men = Category(name: '男裝', products: _mockProducts);
-Category accessories = Category(name: '配件', products: _mockProducts);
