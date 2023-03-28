@@ -7,26 +7,23 @@ class KeyVisionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: kvList
-            .map(
-              (kv) => Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 20,
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    kv.url,
-                    width: 300,
-                  ),
-                ),
-              ),
-            )
-            .toList(),
+    return SizedBox(
+      height: 240,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: kvList.length,
+        itemBuilder: (context, index) => Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 20,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.network(
+              kvList[index].url,
+            ),
+          ),
+        ),
       ),
     );
   }
