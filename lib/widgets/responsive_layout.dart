@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/data/dimensions.dart';
+import 'package:flutter_appworks/constants/dimensions.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/data/key_vision.dart';
+import 'package:flutter_appworks/models/key_vision.dart';
 
 class KeyVisionList extends StatelessWidget {
   const KeyVisionList({

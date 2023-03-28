@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/data/key_vision.dart';
-import 'package:flutter_appworks/data/product.dart';
+import 'package:flutter_appworks/models/key_vision.dart';
+import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
 import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
 import 'package:flutter_appworks/widgets/home/product_list_column.dart';

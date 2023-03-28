@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/data/product.dart';
+import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/widgets/home/product_item.dart';
 
 class ProductListRow extends StatelessWidget {

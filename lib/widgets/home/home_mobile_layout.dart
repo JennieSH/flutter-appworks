@@ -1,7 +1,7 @@
 import 'key_vision_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/data/key_vision.dart';
-import 'package:flutter_appworks/data/product.dart';
+import 'package:flutter_appworks/models/key_vision.dart';
+import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/widgets/home/product_list_column.dart';
 
 class HomeMobileLayout extends StatelessWidget {
