@@ -4,7 +4,7 @@ class KeyVision {
   KeyVision({required this.url});
 }
 
-List<KeyVision> kvList = List.filled(
+List<KeyVision> kvListData = List.filled(
   5,
   KeyVision(
       url:

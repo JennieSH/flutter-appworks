@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/data/key_vision.dart';
 import 'package:flutter_appworks/data/product.dart';
-import 'package:flutter_appworks/widgets/home/key_vision_list.dart';
+import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
+import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
 import 'package:flutter_appworks/widgets/home/product_list_column.dart';
 import 'package:flutter_appworks/widgets/home/product_list_row.dart';
 import 'package:flutter_appworks/widgets/responsive_layout.dart';
@@ -11,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categories = [women, men, accessories];
+    final kvList = kvListData;
 
     return Scaffold(
       appBar: AppBar(
@@ -21,15 +24,10 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(children: [
-        const KeyVisionList(),
-        Expanded(
-          child: ResponsiveLayout(
-            mobileBody: ProductListColumn(categories: categories),
-            desktopBody: ProductListRow(categories: categories),
-          ),
-        )
-      ]),
+      body: ResponsiveLayout(
+        mobileBody: HomeMobileLayout(kvList: kvList, categories: categories),
+        desktopBody: HomeDesktopLayout(kvList: kvList, categories: categories),
+      ),
     );
   }
 }

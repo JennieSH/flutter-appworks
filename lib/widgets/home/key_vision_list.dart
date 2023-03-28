@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_appworks/data/key_vision.dart';
 
 class KeyVisionList extends StatelessWidget {
-  const KeyVisionList({super.key});
+  const KeyVisionList({
+    super.key,
+    required this.kvList,
+  });
+
+  final List<KeyVision> kvList;
 
   @override
   Widget build(BuildContext context) {
