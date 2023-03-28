@@ -25,33 +25,28 @@ class _ProductListColumnState extends State<ProductListColumn> {
 
     return ListView.builder(
       itemCount: widget.categories.length,
-      itemBuilder: (context, index) => Column(
-        children: [
-          ExpansionTile(
-            textColor: Colors.black, // 展開 title color
-            title: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                widget.categories[index].name,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ),
-            onExpansionChanged: (bool expanded) {
-              setState(() {
-                _isExpanded[index] = expanded;
-              });
-            },
-            initiallyExpanded: _isExpanded[index],
-            children: widget.categories[index].products
-                .map(
-                  (product) => ProductItem(
-                    product: product,
-                  ),
-                )
-                .toList(),
+      itemBuilder: (context, index) => ExpansionTile(
+        textColor: Colors.black, // 展開 title color
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            widget.categories[index].name,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-        ],
+        ),
+        onExpansionChanged: (bool expanded) {
+          setState(() {
+            _isExpanded[index] = expanded;
+          });
+        },
+        initiallyExpanded: _isExpanded[index],
+        children: widget.categories[index].products
+            .map(
+              (product) => ProductItem(
+                product: product,
+              ),
+            )
+            .toList(),
       ),
     );
   }
