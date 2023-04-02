@@ -3,6 +3,7 @@ import 'package:flutter_appworks/services/key_vision.dart';
 import 'package:flutter_appworks/services/product.dart';
 import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
 import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
+import 'package:flutter_appworks/widgets/logo.dart';
 import 'package:flutter_appworks/widgets/responsive_layout.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,12 +16,8 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: SizedBox(
-            width: 120.0,
-            child: Image.asset('assets/logo.png'),
-          ),
-        ),
+        title: const Logo(),
+        centerTitle: true,
       ),
       body: ResponsiveLayout(
         mobileBody: HomeMobileLayout(kvList: kvList, categories: categories),
