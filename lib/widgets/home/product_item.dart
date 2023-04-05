@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/constants/route.dart';
 import 'package:flutter_appworks/models/product.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key, required this.product});
@@ -10,7 +12,10 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product', arguments: {'id': product.id});
+        context.pushNamed(
+          RouteName.product,
+          params: {'id': product.id.toString()},
+        );
       },
       child: Container(
         margin: EdgeInsets.all(8),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/pages/home.dart';
-import 'package:flutter_appworks/pages/product.dart';
+import 'package:flutter_appworks/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData(
         fontFamily: 'NotoSansTC',
         primarySwatch: Colors.grey,
@@ -21,10 +20,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.grey[200],
         ),
       ),
-      routes: {
-        '/': (context) => HomePage(),
-        '/product': (context) => ProductPage()
-      },
+      routeInformationParser: AppRouter().router.routeInformationParser,
+      routerDelegate: AppRouter().router.routerDelegate,
     );
   }
 }

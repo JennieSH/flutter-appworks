@@ -6,14 +6,13 @@ import 'package:flutter_appworks/widgets/product/product_mobile_layout.dart';
 import 'package:flutter_appworks/widgets/responsive_layout.dart';
 
 class ProductPage extends StatelessWidget {
-  ProductPage({super.key});
+  final String id;
 
-  late Map routeData = {};
+  ProductPage({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
-    routeData = ModalRoute.of(context)?.settings.arguments as Map;
-    final product = getProductById('${routeData['id']}');
+    final product = getProductById(id);
 
     return Scaffold(
         appBar: AppBar(
