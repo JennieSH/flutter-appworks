@@ -10,7 +10,7 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(product.price);
+        Navigator.pushNamed(context, '/product', arguments: {'id': product.id});
       },
       child: Container(
         margin: EdgeInsets.all(8),
