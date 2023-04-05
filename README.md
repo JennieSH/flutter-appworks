@@ -1,13 +1,8 @@
-# Flutter Basic I - Layouts
+# Flutter Basic II - Navigation
 
 ## 本週學習目標
 
-[Introduction to widgets](https://docs.flutter.dev/development/ui/widgets-intro)  
-[Layouts in Flutter](https://docs.flutter.dev/development/ui/layout)  
-[Building layouts](https://docs.flutter.dev/development/ui/layout/tutorial)  
-[Adding interactivity](https://docs.flutter.dev/development/ui/interactive)  
-[Assets and images](https://docs.flutter.dev/development/ui/assets-and-images)  
-[Material Design](https://docs.flutter.dev/development/ui/material)
+[Navigation and routing](https://docs.flutter.dev/development/ui/navigation)
 
 <br>
 
@@ -15,13 +10,6 @@
 
 ## 本週實作目標
 
-- **Web**
-  ![Web](https://i.imgur.com/RfAwwMb.jpg)
+![實作目標 image](https://i.imgur.com/FOqLupm.png)
 
 <br>
-
-- **Mobile** (iOS/Android)
-  ![Mobile](https://i.imgur.com/HpUZogx.png)
-  <br>
-
-Design 概念來自 [Flutter Gallery](https://gallery.flutter.dev/)
