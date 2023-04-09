@@ -107,7 +107,7 @@ Product getProductById(id) {
         Variant(
           colorCode: 'FFFFFF',
           size: 'M',
-          stock: 5,
+          stock: 0,
         ),
         Variant(
           colorCode: 'FFFFFF',
@@ -132,7 +132,7 @@ Product getProductById(id) {
         Variant(
           colorCode: 'DDF0FF',
           size: 'XL',
-          stock: 3,
+          stock: 0,
         ),
       ],
       colors: [
