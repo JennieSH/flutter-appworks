@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/counter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,11 +28,13 @@ class Counter extends StatefulWidget {
 
 class _CounterState extends State<Counter> {
   int _counter = 0;
+  // STEP 1. 宣告 counterBloc
+  final counterBloc = CounterBloc();
 
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    _counter++;
+    // STEP 2. 使用 counterSink.add(data)
+    counterBloc.counterSink.add(_counter);
   }
 
   @override
@@ -42,9 +45,15 @@ class _CounterState extends State<Counter> {
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            '$_counter',
-            style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+          // STEP 3. 監聽 stream
+          // a. wrap with StreamBuilder
+          StreamBuilder(
+            stream:
+                counterBloc.counterStream, // b. use builder and return widget
+            builder: (context, snapshot) => Text(
+              '$_counter',
+              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+            ),
           ),
           const SizedBox(
             height: 16,
