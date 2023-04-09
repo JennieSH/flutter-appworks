@@ -30,11 +30,6 @@ class Counter extends StatefulWidget {
 class _CounterState extends State<Counter> {
   final counterBloc = CounterBloc();
 
-  void _incrementCounter() {
-    // dispatch event
-    counterBloc.eventSink.add(CounterAction.INCREMENT);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +51,31 @@ class _CounterState extends State<Counter> {
           const SizedBox(
             height: 16,
           ),
-          IconButton(
-            onPressed: _incrementCounter,
-            icon: const Icon(Icons.add_circle),
-            iconSize: 36,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {
+                  counterBloc.eventSink.add(CounterAction.INCREMENT);
+                },
+                icon: const Icon(Icons.add_circle),
+                iconSize: 36,
+              ),
+              IconButton(
+                onPressed: () {
+                  counterBloc.eventSink.add(CounterAction.DECREMENT);
+                },
+                icon: const Icon(Icons.remove_circle),
+                iconSize: 36,
+              ),
+              IconButton(
+                onPressed: () {
+                  counterBloc.eventSink.add(CounterAction.RESET);
+                },
+                icon: const Icon(Icons.loop_outlined),
+                iconSize: 36,
+              ),
+            ],
           )
         ]),
       ),
