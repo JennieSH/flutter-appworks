@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Counter());
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Counter(),
+    );
   }
 }
 
@@ -27,14 +28,11 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  int _counter = 0;
-  // STEP 1. 宣告 counterBloc
   final counterBloc = CounterBloc();
 
   void _incrementCounter() {
-    _counter++;
-    // STEP 2. 使用 counterSink.add(data)
-    counterBloc.counterSink.add(_counter);
+    // dispatch event
+    counterBloc.eventSink.add(CounterAction.INCREMENT);
   }
 
   @override
@@ -45,13 +43,13 @@ class _CounterState extends State<Counter> {
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          // STEP 3. 監聽 stream
           // a. wrap with StreamBuilder
           StreamBuilder(
             stream:
                 counterBloc.counterStream, // b. use builder and return widget
+            initialData: 0, // c. 不給 init data，一開始會拿到 null
             builder: (context, snapshot) => Text(
-              '$_counter',
+              '${snapshot.data}', // d. snapshot.data 得到值
               style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
             ),
           ),
