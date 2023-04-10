@@ -4,14 +4,14 @@ import 'package:flutter_appworks/pages/page_a.dart';
 import 'package:flutter_appworks/pages/page_b.dart';
 import 'package:flutter_appworks/widgets/text_color.dart';
 
-class ButtonSection extends StatefulWidget {
-  const ButtonSection({super.key});
+class RedirectButtons extends StatefulWidget {
+  const RedirectButtons({super.key});
 
   @override
-  State<ButtonSection> createState() => _ButtonSectionState();
+  State<RedirectButtons> createState() => _RedirectButtonsState();
 }
 
-class _ButtonSectionState extends State<ButtonSection> {
+class _RedirectButtonsState extends State<RedirectButtons> {
   @override
   Widget build(BuildContext context) {
     // receive data from TextColor

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/widgets/button_section.dart';
+import 'package:flutter_appworks/widgets/redirect_buttons.dart';
 import 'package:flutter_appworks/widgets/text_color.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                 icon: const Icon(Icons.loop),
                 label: const Text('change color'),
               ),
-              ButtonSection(),
+              const RedirectButtons(),
             ],
           ),
         ),
