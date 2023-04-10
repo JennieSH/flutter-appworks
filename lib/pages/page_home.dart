@@ -22,25 +22,23 @@ class _HomePageState extends State<HomePage> {
       // create InheritedWidgets
       // when color in TextColor change, all child Widget changed
       // now let's create a button for multiple color changing
-      body: Center(
-        child: TextColor(
-          color: _colorList[_index % 3],
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              OutlinedButton.icon(
-                onPressed: () {
-                  // press button to change color in list
-                  setState(() {
-                    _index++;
-                  });
-                },
-                icon: const Icon(Icons.loop),
-                label: const Text('change color'),
-              ),
-              const RedirectButtons(),
-            ],
-          ),
+      body: TextColor(
+        color: _colorList[_index % 3],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OutlinedButton.icon(
+              onPressed: () {
+                // press button to change color in list
+                setState(() {
+                  _index++;
+                });
+              },
+              icon: const Icon(Icons.loop),
+              label: const Text('change color'),
+            ),
+            const RedirectButtons(),
+          ],
         ),
       ),
     );
