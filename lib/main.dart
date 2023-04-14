@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/counter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Counter(),
+      // 使用 BlocProvider 注入
+      home: BlocProvider<CounterBloc>(
+        create: (_) => CounterBloc(),
+        child: Counter(),
+      ),
     );
   }
 }
@@ -28,23 +33,20 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  final counterBloc = CounterBloc();
-
   @override
   Widget build(BuildContext context) {
+    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BLoC'),
+        title: const Text('Flutter BLoC'),
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          // a. wrap with StreamBuilder
-          StreamBuilder(
-            stream:
-                counterBloc.counterStream, // b. use builder and return widget
-            initialData: 0, // c. 不給 init data，一開始會拿到 null
-            builder: (context, snapshot) => Text(
-              '${snapshot.data}', // d. snapshot.data 得到值
+          // BlocBuilder<Bloc,State>
+          BlocBuilder<CounterBloc, int>(
+            builder: (context, count) => Text(
+              '$count',
               style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
             ),
           ),
@@ -56,21 +58,22 @@ class _CounterState extends State<Counter> {
             children: [
               IconButton(
                 onPressed: () {
-                  counterBloc.eventSink.add(CounterAction.INCREMENT);
+                  // 使用 add 傳送事件
+                  counterBloc.add(IncrementEvent());
                 },
                 icon: const Icon(Icons.add_circle),
                 iconSize: 36,
               ),
               IconButton(
                 onPressed: () {
-                  counterBloc.eventSink.add(CounterAction.DECREMENT);
+                  counterBloc.add(DecrementEvent());
                 },
                 icon: const Icon(Icons.remove_circle),
                 iconSize: 36,
               ),
               IconButton(
                 onPressed: () {
-                  counterBloc.eventSink.add(CounterAction.RESET);
+                  counterBloc.add(ResetEvent());
                 },
                 icon: const Icon(Icons.loop_outlined),
                 iconSize: 36,

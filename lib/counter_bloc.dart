@@ -1,35 +1,18 @@
-import 'dart:async';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum CounterAction { INCREMENT, DECREMENT, RESET }
+abstract class CounterEvent {}
 
-class CounterBloc {
-  late int counter;
-  // pipe
-  final _stateStreamController = StreamController<int>();
-  // input
-  StreamSink<int> get counterSink => _stateStreamController.sink;
-  // output
-  Stream<int> get counterStream => _stateStreamController.stream;
+class IncrementEvent extends CounterEvent {}
 
-  final _eventStreamController = StreamController<CounterAction>();
-  StreamSink<CounterAction> get eventSink => _eventStreamController.sink;
-  Stream<CounterAction> get eventStream => _eventStreamController.stream;
+class DecrementEvent extends CounterEvent {}
 
-// constructor
-  CounterBloc() {
-    counter = 0;
+class ResetEvent extends CounterEvent {}
 
-    // listen change in the stream
-    eventStream.listen((event) {
-      if (event == CounterAction.INCREMENT) {
-        counter++;
-      } else if (event == CounterAction.DECREMENT) {
-        counter--;
-      } else if (event == CounterAction.RESET) {
-        counter = 0;
-      }
-
-      counterSink.add(counter);
-    });
+class CounterBloc extends Bloc<CounterEvent, int> {
+  // 初始 state 0
+  CounterBloc() : super(0) {
+    on<IncrementEvent>((event, emit) => emit(state + 1));
+    on<DecrementEvent>((event, emit) => emit(state - 1));
+    on<ResetEvent>((event, emit) => emit(0));
   }
 }
