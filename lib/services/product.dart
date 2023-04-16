@@ -216,8 +216,3 @@ List<Product> getMenProducts() {
 List<Product> getAccessoriesProducts() {
   return List.filled(5, getProductById('201807242228'));
 }
-
-// TODO 待整理
-Category women = Category(name: '女裝', products: getWomenProducts());
-Category men = Category(name: '男裝', products: getMenProducts());
-Category accessories = Category(name: '配件', products: getAccessoriesProducts());
