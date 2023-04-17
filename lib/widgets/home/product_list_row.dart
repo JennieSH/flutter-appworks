@@ -32,14 +32,8 @@ class ProductListRow extends StatelessWidget {
                   Expanded(
                     child: ListView.builder(
                       itemCount: category.products.length,
-                      itemBuilder: (context, index) => Column(
-                        children: category.products
-                            .map(
-                              (product) => ProductItem(
-                                product: product,
-                              ),
-                            )
-                            .toList(),
+                      itemBuilder: (context, index) => ProductItem(
+                        product: category.products[index],
                       ),
                     ),
                   ),
