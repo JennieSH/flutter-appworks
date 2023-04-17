@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/blocs/product_list/product_list_bloc.dart';
 import 'package:flutter_appworks/models/product.dart';
-
 import 'package:flutter_appworks/services/key_vision.dart';
+import 'package:flutter_appworks/widgets/errorText.dart';
 import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
 import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
 import 'package:flutter_appworks/widgets/logo.dart';
@@ -25,8 +25,8 @@ class HomePage extends StatelessWidget {
         ),
         body: BlocBuilder<ProductListBloc, ProductListState>(
           builder: (context, state) {
-            if (state is ProductListLoadingState) {
-              return const Text('loading');
+            if (state is ProductListErrorState) {
+              return ErrorText(state.message.toString());
             } else if (state is ProductListSuccessState) {
               final categories = [
                 Category(name: '女裝', products: state.women),
@@ -41,7 +41,9 @@ class HomePage extends StatelessWidget {
                     HomeDesktopLayout(kvList: kvList, categories: categories),
               );
             } else {
-              return const Text('error');
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             }
           },
         ),
