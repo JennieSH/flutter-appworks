@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/constants/dimensions.dart';
 import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/utils/color.dart';
 
@@ -320,6 +321,18 @@ class _ProductVariantState extends State<ProductVariant> {
               ? null
               : () {
                   print({currentColorCode, currentSize, currentQuantity});
+
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.07),
+                        child: const Text(
+                          '成功加入購物車',
+                          textAlign: TextAlign.start,
+                        )),
+                    duration: const Duration(milliseconds: 500),
+                  ));
                 },
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
