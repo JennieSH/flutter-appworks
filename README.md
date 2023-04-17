@@ -1,14 +1,11 @@
-# Flutter Basic III - State Management
+# Flutter Basic IV - Networking
 
 ## 本週學習目標
 
-[State management](https://docs.flutter.dev/development/data-and-backend/state-mgmt/intro)  
-[Start thinking declaratively](https://docs.flutter.dev/development/data-and-backend/state-mgmt/declarative)  
-[Differentiate between ephemeral state and app state](https://docs.flutter.dev/development/data-and-backend/state-mgmt/ephemeral-vs-app)  
-[Simple app state management](https://docs.flutter.dev/development/data-and-backend/state-mgmt/simple)  
-[List of state management approaches](https://docs.flutter.dev/development/data-and-backend/state-mgmt/options)
-
-[bloc](https://bloclibrary.dev/)
+[Networking](https://docs.flutter.dev/development/data-and-backend/networking)  
+[JSON and serialization](https://docs.flutter.dev/development/data-and-backend/json)  
+[dio](https://pub.dev/packages/dio)  
+[cached_network_image](https://pub.dev/packages/cached_network_image)
 
 <br>
 
@@ -16,10 +13,17 @@
 
 ## 本週實作目標
 
-[How to manage application states using inherited widgets | Workshop](https://www.youtube.com/watch?v=LFcGPS6cGrY)
+串接 [STYLiSH Product List API](https://github.com/AppWorks-School/API-Doc/tree/master/Stylish#product-list-api)
 
-State Management 技術筆記:
+完成原生 HTTP request、dio HTTP request、cached_network_image。
 
-- [[Note] Inherited Widget](https://hackmd.io/@A0kE5q5HSHaH_8OlyRKbyQ/HyLWX5bzh)
-- [[Note] BLoC Pattern](https://hackmd.io/@A0kE5q5HSHaH_8OlyRKbyQ/HkyGB2Zz3)
-- [[Note] Flutter Bloc](https://hackmd.io/@A0kE5q5HSHaH_8OlyRKbyQ/S1Yvk2Wz3)
+<br>
+
+---
+
+## Flutter 學習資源
+
+Root  
+・10. HTTP Requests
+
+<br>
