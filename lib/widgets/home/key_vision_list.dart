@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/models/key_vision.dart';
+import 'package:skeletons/skeletons.dart';
 
 class KeyVisionList extends StatelessWidget {
   const KeyVisionList({
@@ -23,8 +25,13 @@ class KeyVisionList extends StatelessWidget {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              kvList[index].picture,
+            child: CachedNetworkImage(
+              width: 350,
+              imageUrl: kvList[index].picture,
+              placeholder: (context, url) => const SkeletonAvatar(
+                style: SkeletonAvatarStyle(),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
         ),

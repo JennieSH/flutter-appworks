@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/constants/route.dart';
 import 'package:flutter_appworks/models/product.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skeletons/skeletons.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key, required this.product});
@@ -31,9 +33,14 @@ class ProductItem extends StatelessWidget {
               borderRadius: const BorderRadius.horizontal(
                 left: Radius.circular(8),
               ),
-              child: Image.network(
-                product.mainImage,
+              child: CachedNetworkImage(
+                imageUrl: product.mainImage,
                 width: 60,
+                height: 80,
+                placeholder: (context, url) => const SkeletonAvatar(
+                  style: SkeletonAvatarStyle(),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
             const SizedBox(

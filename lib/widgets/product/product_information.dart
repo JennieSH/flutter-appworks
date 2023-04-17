@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/widgets/gradient_text.dart';
+import 'package:skeletons/skeletons.dart';
 
 class ProductInformation extends StatelessWidget {
   String story;
@@ -56,7 +58,15 @@ class ProductInformation extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               vertical: 12,
             ),
-            child: Image.network(image),
+            child: CachedNetworkImage(
+              fit: BoxFit.cover,
+              width: double.infinity,
+              imageUrl: image,
+              placeholder: (context, url) => const SkeletonAvatar(
+                style: SkeletonAvatarStyle(height: 500),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
           ),
         )
       ],

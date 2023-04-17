@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/constants/dimensions.dart';
 import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/widgets/product/product_variant.dart';
 import 'product_information.dart';
+import 'package:skeletons/skeletons.dart';
 
 class ProductDesktopLayout extends StatelessWidget {
   Product product;
@@ -28,7 +30,16 @@ class ProductDesktopLayout extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: Image.network(product.mainImage, fit: BoxFit.cover),
+                    child: CachedNetworkImage(
+                      fit: BoxFit.cover,
+                      height: containerMaxWidth / 1.7,
+                      imageUrl: product.mainImage,
+                      placeholder: (context, url) => const SkeletonAvatar(
+                        style: SkeletonAvatarStyle(),
+                      ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                    ),
                   ),
                   const SizedBox(
                     width: 24,
