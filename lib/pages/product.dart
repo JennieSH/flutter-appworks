@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/blocs/product/product_bloc.dart';
+import 'package:flutter_appworks/cubit/product_selector_cubit.dart';
 import 'package:flutter_appworks/widgets/errorText.dart';
 import 'package:flutter_appworks/widgets/logo.dart';
 import 'package:flutter_appworks/widgets/product/product_desktop_layout.dart';
@@ -14,14 +15,26 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ProductBloc()..add(GetProductEvent(int.parse(id))),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ProductBloc>(
+          create: (BuildContext context) =>
+              ProductBloc()..add(GetProductEvent(int.parse(id))),
+        ),
+        BlocProvider<ProductSelectorCubit>(
+          create: (BuildContext context) => ProductSelectorCubit(),
+        ),
+      ],
       child: Scaffold(
           appBar: AppBar(
             title: const Logo(),
             centerTitle: true,
           ),
-          body: BlocBuilder<ProductBloc, ProductState>(
+          body: BlocConsumer<ProductBloc, ProductState>(
+            listener: (context, state) => {
+              if (state is ProductSuccessState)
+                context.read<ProductSelectorCubit>().initProduct(state.product)
+            },
             builder: (context, state) {
               if (state is ProductErrorState) {
                 return ErrorText(state.message.toString());
