@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/blocs/product_list/product_list_bloc.dart';
 import 'package:flutter_appworks/models/product.dart';
-import 'package:flutter_appworks/services/key_vision.dart';
 import 'package:flutter_appworks/widgets/errorText.dart';
 import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
 import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
@@ -14,8 +13,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final kvList = getKeyVisionList();
-
     return BlocProvider(
       create: (context) => ProductListBloc()..add(GetProductListEvent()),
       child: Scaffold(
@@ -35,10 +32,10 @@ class HomePage extends StatelessWidget {
               ];
 
               return ResponsiveLayout(
-                mobileBody:
-                    HomeMobileLayout(kvList: kvList, categories: categories),
-                desktopBody:
-                    HomeDesktopLayout(kvList: kvList, categories: categories),
+                mobileBody: HomeMobileLayout(
+                    campaigns: state.campaigns, categories: categories),
+                desktopBody: HomeDesktopLayout(
+                    campaigns: state.campaigns, categories: categories),
               );
             } else {
               return const Center(

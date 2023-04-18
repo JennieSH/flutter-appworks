@@ -13,8 +13,14 @@ class ProductListSuccessState extends ProductListState {
   final List<Product> women;
   final List<Product> men;
   final List<Product> accessories;
+  final List<Campaign> campaigns;
 
-  const ProductListSuccessState(this.women, this.men, this.accessories);
+  const ProductListSuccessState(
+    this.women,
+    this.men,
+    this.accessories,
+    this.campaigns,
+  );
 }
 
 class ProductListErrorState extends ProductListState {

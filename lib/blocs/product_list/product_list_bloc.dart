@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_appworks/models/campaign.dart';
 import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/services/api.dart';
 
@@ -14,13 +15,20 @@ class ProductListBloc extends Bloc<ProductListEvent, ProductListState> {
       emit(ProductListLoadingState());
 
       try {
-        var res = await Future.wait([
+        final res = await Future.wait([
           _apiService.getProductList('women'),
           _apiService.getProductList('men'),
           _apiService.getProductList('accessories'),
+          _apiService.getCampaignList()
         ]);
 
-        emit(ProductListSuccessState(res[0], res[1], res[2]));
+        // List.cast() 方法將 List<Object> 轉換為 List<Product>
+        emit(ProductListSuccessState(
+          res[0].cast<Product>(),
+          res[1].cast<Product>(),
+          res[2].cast<Product>(),
+          res[3].cast<Campaign>(),
+        ));
       } catch (e) {
         emit(ProductListErrorState(e.toString()));
       }
