@@ -1,5 +1,5 @@
-const apiPath = {
-  'campaign': '/marketing/campaigns',
-  'product': '/products',
-  'product-details': '/products/details'
-};
+class ApiPath {
+  static String campaign = '/marketing/campaigns';
+  static String product = '/products';
+  static String product_details = '/products/details';
+}

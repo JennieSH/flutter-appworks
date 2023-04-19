@@ -8,7 +8,7 @@ class ProductService {
 
   Future<List<Product>> getProductList(String category) async {
     try {
-      Response response = await _dio.get('${apiPath['product']}/$category');
+      Response response = await _dio.get('${ApiPath.product}/$category');
 
       final List<dynamic> _data = response.data['data'];
       List<Product> _products =
@@ -23,8 +23,8 @@ class ProductService {
 
   Future<Product> getProductById(int id) async {
     try {
-      Response response = await _dio
-          .get(apiPath['product-details']!, queryParameters: {'id': id});
+      Response response =
+          await _dio.get(ApiPath.product_details, queryParameters: {'id': id});
 
       return Product.fromJson(response.data['data']);
     } catch (error) {

@@ -8,8 +8,7 @@ const _baseUrl = 'https://api.appworks-school.tw/api/1.0';
 class CampaignService {
   Future<List<Campaign>> getCampaignList() async {
     try {
-      Response response =
-          await get(Uri.parse('$_baseUrl/${apiPath['campaign']}'));
+      Response response = await get(Uri.parse('$_baseUrl/${ApiPath.campaign}'));
       final List<dynamic> _data = convert.jsonDecode(response.body)['data'];
       List<Campaign> _campaigns =
           _data.map((json) => Campaign.fromJson(json)).toList();
