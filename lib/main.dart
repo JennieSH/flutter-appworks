@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/router.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       routeInformationParser: AppRouter().router.routeInformationParser,
       routerDelegate: AppRouter().router.routerDelegate,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
