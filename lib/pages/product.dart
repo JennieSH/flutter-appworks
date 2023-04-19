@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/blocs/product/product_bloc.dart';
+import 'package:flutter_appworks/constants/route.dart';
 import 'package:flutter_appworks/cubit/product_selector_cubit.dart';
 import 'package:flutter_appworks/widgets/errorText.dart';
 import 'package:flutter_appworks/widgets/logo.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_appworks/widgets/product/product_desktop_layout.dart';
 import 'package:flutter_appworks/widgets/product/product_mobile_layout.dart';
 import 'package:flutter_appworks/widgets/responsive_layout.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductPage extends StatelessWidget {
   final String id;
@@ -29,6 +31,13 @@ class ProductPage extends StatelessWidget {
           appBar: AppBar(
             title: const Logo(),
             centerTitle: true,
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    context.pushNamed(RouteName.cart);
+                  },
+                  icon: const Icon(Icons.shopping_cart_outlined))
+            ],
           ),
           body: BlocConsumer<ProductBloc, ProductState>(
             listener: (context, state) => {

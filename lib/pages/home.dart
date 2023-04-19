@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/blocs/product_list/product_list_bloc.dart';
+import 'package:flutter_appworks/constants/route.dart';
 import 'package:flutter_appworks/models/product.dart';
 import 'package:flutter_appworks/widgets/errorText.dart';
 import 'package:flutter_appworks/widgets/home/home_desktop_layout.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_appworks/widgets/home/home_mobile_layout.dart';
 import 'package:flutter_appworks/widgets/logo.dart';
 import 'package:flutter_appworks/widgets/responsive_layout.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,6 +21,13 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Logo(),
           centerTitle: true,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  context.pushNamed(RouteName.cart);
+                },
+                icon: const Icon(Icons.shopping_cart_outlined))
+          ],
         ),
         body: BlocBuilder<ProductListBloc, ProductListState>(
           builder: (context, state) {
