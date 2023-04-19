@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
                 },
                 icon: const Icon(Icons.shopping_cart_outlined))
           ],
+          automaticallyImplyLeading: false,
         ),
         body: BlocBuilder<ProductListBloc, ProductListState>(
           builder: (context, state) {
