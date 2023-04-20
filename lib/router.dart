@@ -32,7 +32,7 @@ class AppRouter {
         name: RouteName.cart,
         path: '/cart',
         pageBuilder: (context, state) {
-          return const MaterialPage(
+          return MaterialPage(
             child: ShoppingCartPage(),
           );
         },

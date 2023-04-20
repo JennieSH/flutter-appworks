@@ -82,3 +82,30 @@ class Category {
   String name;
   List<Product> products;
 }
+
+class CartProduct extends Product {
+  CartProduct({
+    required this.selectedQuantity,
+    required this.selectedSize,
+    required this.selectedColor,
+    required super.id,
+    required super.category,
+    required super.title,
+    required super.description,
+    required super.price,
+    required super.texture,
+    required super.wash,
+    required super.place,
+    required super.note,
+    required super.story,
+    required super.mainImage,
+    required super.images,
+    required super.variants,
+    required super.colors,
+    required super.sizes,
+  });
+
+  int selectedQuantity;
+  Color selectedColor;
+  String selectedSize;
+}
