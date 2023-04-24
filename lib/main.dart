@@ -16,13 +16,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MethodChannel(),
+      home: Home(),
     );
   }
 }
 
-class MethodChannel extends StatelessWidget {
-  MethodChannel({super.key});
+class Home extends StatefulWidget {
+  Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   String _greeting = '';
 
   Future<void> _getGreeting() async {
