@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/constants/route.dart';
 import 'package:flutter_appworks/pages/home.dart';
+import 'package:flutter_appworks/pages/method_channel.dart';
 import 'package:flutter_appworks/pages/not_found.dart';
 import 'package:flutter_appworks/pages/product.dart';
 import 'package:flutter_appworks/pages/shopping_cart.dart';
@@ -14,8 +15,8 @@ class AppRouter {
         path: '/',
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: HomePage(),
-          );
+              // child: HomePage(),
+              child: MethodChannelPage());
         },
       ),
       GoRoute(
