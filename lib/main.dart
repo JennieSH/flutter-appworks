@@ -31,11 +31,17 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   late GoogleMapController _mapController;
   final TextEditingController _searchController = TextEditingController();
-
+  final Set<Marker> _markers = <Marker>{};
   final LatLng _center = const LatLng(45.521563, -122.677433);
 
   void _onMapCreated(GoogleMapController controller) {
     _mapController = controller;
+  }
+
+  void _setMarker(LatLng point) {
+    setState(() {
+      _markers.add(Marker(markerId: const MarkerId('marker'), position: point));
+    });
   }
 
   Future<void> _goToPlace(Map<String, dynamic> place) async {
@@ -52,6 +58,15 @@ class _MapPageState extends State<MapPage> {
         ),
       ),
     );
+
+    _setMarker(LatLng(lat, lng));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _setMarker(_center);
   }
 
   @override
@@ -73,8 +88,10 @@ class _MapPageState extends State<MapPage> {
                     hintText: 'Search by City',
                     contentPadding: EdgeInsets.all(8),
                   ),
-                  onChanged: (val) {
-                    // print(val);
+                  onFieldSubmitted: (value) async {
+                    var place = await LocationService().getPlace(value);
+
+                    _goToPlace(place);
                   },
                 )),
                 IconButton(
@@ -96,6 +113,7 @@ class _MapPageState extends State<MapPage> {
                   target: _center,
                   zoom: 11.0,
                 ),
+                markers: _markers,
               ),
             ),
           ],
