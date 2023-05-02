@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appworks/directions_page.dart';
 import 'package:flutter_appworks/search_location_page.dart';
 
 void main() {
@@ -16,8 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const SearchLocationPage(),
-      home: const DirectionsPage(),
+      home: const SearchLocationPage(),
     );
   }
 }

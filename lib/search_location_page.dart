@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/directions_page.dart';
 import 'package:flutter_appworks/location_service.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -57,6 +58,19 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
         appBar: AppBar(
           title: const Text('Maps Sample App'),
           backgroundColor: Colors.green[700],
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const DirectionsPage();
+                      },
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.explore_outlined))
+          ],
         ),
         body: Column(
           children: [

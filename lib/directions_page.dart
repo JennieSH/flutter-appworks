@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/location_service.dart';
+import 'package:flutter_appworks/search_location_page.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -16,7 +17,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
   final TextEditingController _destinationController = TextEditingController();
   final Set<Marker> _markers = <Marker>{};
   final Set<Polyline> _polylines = <Polyline>{};
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(25.0384799, 121.5323702);
 
   int _polylineCounter = 1;
 
@@ -89,6 +90,19 @@ class _DirectionsPageState extends State<DirectionsPage> {
           appBar: AppBar(
             title: const Text('Maps Sample App'),
             backgroundColor: Colors.green[700],
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return const SearchLocationPage();
+                        },
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.pin_drop_outlined))
+            ],
           ),
           body: Column(
             children: [
