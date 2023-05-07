@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/control_device.dart';
 import 'package:flutter_appworks/get_display_media.dart';
 import 'package:flutter_appworks/get_user_media.dart';
 
@@ -29,6 +30,15 @@ class HomePage extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const GetDisplayMediaPage(),
+              ),
+            ),
+          ),
+          ListTile(
+            title: const Text('Control Device'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ControlDevicePage(),
               ),
             ),
           )
