@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appworks/get_user_media.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,7 +11,17 @@ class HomePage extends StatelessWidget {
         title: Text('Webrtc'),
       ),
       body: ListView(
-        children: [],
+        children: [
+          ListTile(
+            title: const Text('Get User Media'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const GetUserMediaPage(),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
