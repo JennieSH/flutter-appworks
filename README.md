@@ -1,16 +1,37 @@
-# flutter_appworks
+# Flutter Advanced III - WebRTC
 
-A new Flutter project.
+## 本週學習目標
 
-## Getting Started
+[flutter_webrtc](https://pub.dev/packages/flutter_webrtc)
 
-This project is a starting point for a Flutter application.
+<br>
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 本週實作目標
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+完成單一平台 WebRTC 串接。
+
+因為 iOS 需要用實體機測試，所以目前開發以 web 和 android 為主。
+
+<br>
+
+---
+
+## 實作
+
+### Get User Media
+
+### Screen Capture
+
+- 目前 android 不能使用，APP 會直接閃退
+
+### Control Device
+
+### Peer Connection
+
+> 尚未實作 `P2P Call`，目前 local/remote 都為同一裝置
+
+- 目前 android 不能使用，APP 會直接閃退
+
+### Data Channel
