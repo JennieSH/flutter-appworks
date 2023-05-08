@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appworks/control_device.dart';
+import 'package:flutter_appworks/data_channel.dart';
 import 'package:flutter_appworks/get_display_media.dart';
 import 'package:flutter_appworks/get_user_media.dart';
 import 'package:flutter_appworks/peer_connection.dart';
@@ -50,6 +51,15 @@ class HomePage extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const PeerConnectionPage(),
+              ),
+            ),
+          ),
+          ListTile(
+            title: const Text('Data Channel'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DataChannelPage(),
               ),
             ),
           )
