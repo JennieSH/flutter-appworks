@@ -1,16 +1,16 @@
-# flutter_appworks
+# Flutter Advanced IV - ARKit
 
-A new Flutter project.
+## 本週學習目標
 
-## Getting Started
+[arkit_plugin - iOS](https://pub.dev/packages/arkit_plugin)  
+[arcore_flutter_plugin - Android](https://pub.dev/packages/arcore_flutter_plugin)
 
-This project is a starting point for a Flutter application.
+[ARkit vs ARcore: Which Development Kit Is Best for Building Augmented Reality Apps?](https://www.modelry.ai/blog/arkit-vs-arcore)
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 本週實作目標
+
+- 完成 iOS 平台 ARKit 串接 (目前手邊只有 iPhone 可以測試，所以只選擇用 `arkit_plugin` 實作)
